@@ -1,0 +1,29 @@
+{
+  "name": "Bot starter",
+  "version": "1.0.0",
+  "description": "Example of telegraf bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gunyakov/telegraf-bot-starter.git"
+  },
+  "keywords": [
+    "bot",
+    "telegram",
+    "telegraf"
+  ],
+  "author": "Oleg Gunyakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gunyakov/telegraf-bot-starter/issues"
+  },
+  "homepage": "https://github.com/gunyakov/telegraf-bot-starter#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "mysql2": "^2.3.3",
+    "telegraf": "^4.11.2"
+  }
+}

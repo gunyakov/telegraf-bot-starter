@@ -1,0 +1,30 @@
+{
+  "BUTTON_REGISTRATION": {
+    "ru": "Регистрация",
+    "en": "Registration"
+  },
+  "BUTTON_ACCOUNT": {
+    "ru": "Аккаунт",
+    "en": "Account"
+  },
+  "BUTTON_LANGUAGE": {
+    "ru": "Сменить язык / Change language.",
+    "en": "Change language."
+  },
+  "BUTTON_CANCEL": {
+    "ru": "Отмена",
+    "en": "Cancel"
+  },
+  "BUTTON_DELETE_ME": {
+    "ru": "Удалить мой аккаунт и всю мою информацию.",
+    "en": "Delete my account and all my data."
+  },
+  "BUTTON_YES": {
+    "ru": "Да",
+    "en": "Yes"
+  },
+  "BUTTON_CANCEL": {
+    "ru": "Отмена",
+    "en": "Cancel"
+  }
+}

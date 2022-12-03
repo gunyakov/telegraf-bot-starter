@@ -1,0 +1,10 @@
+{
+  "ERROR_DB_FAIL": {
+    "ru": "Ошибка базы данных. Обратитесь к @MarineCareerAdmin.",
+    "en": "Data base error. Pls contact to @MarineCareerAdmin"
+  },
+  "ERROR_UNKNOWN_COMMAND": {
+    "ru": "Команда не распознана. Действия не выполнены.",
+    "en": "Can`t recognize command. Skip any action."
+  }
+}
