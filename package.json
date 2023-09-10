@@ -1,10 +1,11 @@
 {
   "name": "Bot starter",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Example of telegraf bot",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsx index.ts"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,12 @@
   "homepage": "https://github.com/gunyakov/telegraf-bot-starter#readme",
   "dependencies": {
     "colors": "^1.4.0",
-    "mysql2": "^2.3.3",
-    "telegraf": "^4.11.2"
+    "mysql2": "^3.6.0",
+    "telegraf": "^4.13.1"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/node": "^20.6.0",
+    "tsx": "^3.12.8"
   }
 }

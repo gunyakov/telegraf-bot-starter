@@ -22,9 +22,5 @@
   "BUTTON_YES": {
     "ru": "Да",
     "en": "Yes"
-  },
-  "BUTTON_CANCEL": {
-    "ru": "Отмена",
-    "en": "Cancel"
   }
 }

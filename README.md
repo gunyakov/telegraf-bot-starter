@@ -1,6 +1,22 @@
-
 #telegraf-bot-starter
 
-This is example of telegraf bot with scenes, mysql and multilanguage support. For any teaching or developing purposes. If you use my code to develope your bot my name must be as co-author in credentials.
+This is an example of a telegraph bot with scenes, mysql and multilingual support. For any teaching or development purposes. If you use my code to develop your bot, my name must be in the credentials as co-author.
 
-To start use bot import data from DB.sql to database and set properly config in config.js
+To run the bot, import the data from DB.sql into the database and set the correct configuration in config.ts
+
+## Install
+
+```
+git clone https://github.com/gunyakov/telegraf-bot-starter
+
+cd telegraf-bot-starter
+
+npm install
+
+npm run start
+```
+
+### 09 Sep 2023 v2.0.0
+
+- The bot has been rewritten using TypeScript.
+- Support for version 4.13.1 of Telegraf.

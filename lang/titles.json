@@ -3,6 +3,10 @@
     "ru": "Перед началом использования бота необходимо пройти регистрацию. Просто нажмите Регистрация. Ваши данные будут использованны только для будущих идентификаций в боте. Все данные хранятся в зашифрованном виде.",
     "en": "Before start you need pass registration. Just press Registration button. All your data will be used only for future identification in bot. All data store in private, encrypted state."
   },
+  "TXT_ONLY_FOR_AUTH_USERS": {
+    "ru": "Данный раздел доступен только для зарегистрированных пользователей.",
+    "en": "This section is available only for registered users."
+  },
   "TXT_WELCOME_BACK": {
     "ru": "С возвращением, *",
     "en": "Wellcome back, *"
@@ -10,6 +14,26 @@
   "TXT_REG_COMPLETED": {
     "ru": "Регистрация завершена. Вы направленны в главное меню.",
     "en": "Registration is completed. You will be switch to main menu."
+  },
+  "TXT_REG_NO_NEED": {
+    "ru": "Регистрация не требуется.",
+    "en": "Registration is not required."
+  },
+  "TXT_REG_STEP_1": {
+    "ru": "Введите желаемый ник в игре:",
+    "en": "Enter the desired nickname in the game:"
+  },
+  "TXT_REG_STEP_2": {
+    "ru": "Введите емайл:",
+    "en": "Enter email:"
+  },
+  "TXT_REG_EXIT_ENSURE": {
+    "ru": "Вы действительно хотите отменить регистрацию?",
+    "en": "Are you sure you want to cancel registration?"
+  },
+  "TXT_REG_CANCELED": {
+    "ru": "Процесс регистрации был отменен",
+    "en": "The registration process has been canceled"
   },
   "TXT_SESSION_RESET": {
     "ru": "Упс... Бот был перезагружен. Все временные данные были удалены. Вы будете перенаправленны на главное меню.",
@@ -38,5 +62,9 @@
   "TXT_DELETE_ME_OK": {
     "ru": "Ваш аккаунт и вся связанная с ним информация была удалена с базы. Но вы всегда можете зарегистрироваться снова. Благодарим за использование сервиса. До свидания.",
     "en": "You account and all your data were deleted from database. But you can register back. Thank you for using this service. Bye. "
+  },
+  "TXT_DB_ERROR": {
+    "ru": "Ошибка базы данных. Регистрация не завершена. Обратитесь к администратору.",
+    "en": "Database error. Registration failed. Please contact your administrator."
   }
 }
