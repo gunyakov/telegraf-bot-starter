@@ -28,6 +28,17 @@ export default async function (ctx: ExtContext, next: CallableFunction) {
     return 0;
   };
 
+  ctx.getParameter = function (): string {
+    if (ctx.has(callbackQuery("data"))) {
+      let strData = ctx.callbackQuery.data;
+      if (strData) {
+        let dataID = strData.split(":");
+        return dataID ? dataID[1] : "";
+      }
+    }
+    return "";
+  };
+
   ctx.send = async function (
     key: string,
     keyboard?: string,
@@ -61,7 +72,7 @@ export default async function (ctx: ExtContext, next: CallableFunction) {
 
     const keyboard_obj = await keyboardConstructor.createKeyboard(
       keyboard,
-      ctx
+      ctx.session.lang || Lang.en
     );
 
     if (!keyboard_obj) {
@@ -99,7 +110,7 @@ export default async function (ctx: ExtContext, next: CallableFunction) {
 
     const { reply_markup } = (await keyboardConstructor.createKeyboard(
       keyboard,
-      ctx
+      ctx.session.lang || Lang.en
     )) as Markup.Markup<InlineKeyboardMarkup>;
 
     ctx.telegram.editMessageReplyMarkup(
@@ -129,7 +140,7 @@ export default async function (ctx: ExtContext, next: CallableFunction) {
     if (keyboard)
       markup = (await keyboardConstructor.createKeyboard(
         keyboard,
-        ctx
+        ctx.session.lang || Lang.en
       )) as Markup.Markup<InlineKeyboardMarkup>;
 
     ctx.telegram.editMessageReplyMarkup(

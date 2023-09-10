@@ -72,7 +72,6 @@ scene.action("btn_cancel", async (ctx) => {
 
 scene.use(async (ctx, next) => {
   console.log("Inside scene Reg");
-  console.log(ctx.scene.session);
   if (typeof ctx.callbackQuery !== "undefined") {
     //console.log("Callback data", ctx.callbackQuery);
   }

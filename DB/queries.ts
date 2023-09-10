@@ -10,6 +10,8 @@ enum Queries {
   USER_SET_LANGUAGE = "UPDATE usersList SET lang = ? WHERE ID = ?;",
 
   DELETE_USER = "DELETE FROM usersList WHERE chatID = ?;",
+
+  UPDATE_USER_LANG = "UPDATE usersList SET `lang` = ? WHERE ID = ?;",
 }
 
 export default Queries;

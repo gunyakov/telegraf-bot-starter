@@ -1,35 +1,33 @@
-import {ExtContext, Keyboards } from '../src/interface';
-import inlineKeyboards from './inlineKeyboards';
-import usualKeyboards from './keyboards';
-
+import { Lang } from "../src/enums";
+import { ExtContext, Keyboards } from "../src/interface";
+import inlineKeyboards from "./inlineKeyboards";
+import usualKeyboards from "./keyboards";
 
 class KeyboardConstructor {
+  private keyboards: Keyboards = {};
 
-	private keyboards:Keyboards = {};
+  constructor() {
+    this.keyboards = { ...inlineKeyboards, ...usualKeyboards };
+  }
 
-	constructor() {
+  async createKeyboard(keyboard: string | Array<string>, lang: Lang) {
+    if (typeof keyboard === "string") return this.keyboards[keyboard](lang);
 
-		this.keyboards = { ...inlineKeyboards, ...usualKeyboards }
-	}
+    if (!Array.isArray(keyboard) || !this.keyboards[keyboard[0]])
+      throw "Cannot create keyboard";
 
-	async createKeyboard(keyboard:string | Array<string>, context:ExtContext) {
+    const keyboard_name = keyboard[0];
+    const keyboard_args = keyboard.slice(1);
 
-		if(typeof keyboard === 'string') return this.keyboards[keyboard](context)
+    return this.keyboards[keyboard_name](lang, keyboard_args);
+  }
 
-		if(!Array.isArray(keyboard) || !this.keyboards[keyboard[0]]) throw 'Cannot create keyboard'
+  isInline(keyboard: string) {
+    const keyboard_name =
+      typeof keyboard === "string" ? keyboard : keyboard?.[0];
 
-		const keyboard_name = keyboard[0]
-		const keyboard_args = keyboard.slice(1)
-
-		return this.keyboards[keyboard_name](context, keyboard_args);
-	}
-
-	isInline(keyboard:string) {
-
-		const keyboard_name = typeof keyboard === 'string' ? keyboard : keyboard?.[0]
-
-		return inlineKeyboards.hasOwnProperty(keyboard_name)
-	}
+    return inlineKeyboards.hasOwnProperty(keyboard_name);
+  }
 }
 
 export default new KeyboardConstructor();

@@ -6,9 +6,17 @@ import onlyAuthUsers from "../middleware/authusers";
 
 import accountScene from "./account";
 import registrationScene from "./registration";
+import languageScene from "./language";
 
-const stages = new Scenes.Stage<ExtContext>([accountScene, registrationScene], {
-  ttl: 10,
+const stages = new Scenes.Stage<ExtContext>(
+  [accountScene, registrationScene, languageScene],
+  {
+    ttl: 10,
+  }
+);
+//Language changing available for all users
+stages.hears(Titles.hearsTrigger("BUTTON_LANGUAGE"), async (ctx) => {
+  ctx.scene.enter("languageScene");
 });
 //Registration is available for all users
 stages.hears(Titles.hearsTrigger("BUTTON_REGISTRATION"), async (ctx) => {

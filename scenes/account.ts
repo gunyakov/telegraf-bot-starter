@@ -11,7 +11,7 @@ scene.enter((ctx) => {
 });
 
 scene.action("change_language", async (ctx) => {
-  ctx.send("TXT_SELECT_LANGUAGE", "account_language");
+  ctx.scene.enter("languageScene");
 });
 
 scene.action("delete_me", async (ctx) => {
@@ -28,30 +28,6 @@ scene.action("delete_me_confirm", async (ctx) => {
 
 scene.action("delete_me_cancel", async (ctx) => {
   ctx.send("TXT_CANCEL", "user_main_keyboard");
-});
-
-scene.action("language_ru", async (ctx) => {
-  if (ctx.session.lang !== "ru") {
-    if (true) {
-      ctx.send("TXT_CHANGE_LANGUAGE", "user_main_keyboard");
-    } else {
-      ctx.send("ERROR_DB_FAIL");
-    }
-  } else {
-    ctx.send("TXT_CHANGE_LANGUAGE");
-  }
-});
-
-scene.action("language_en", async (ctx) => {
-  if (ctx.session.lang !== "en") {
-    if (true) {
-      ctx.send("TXT_CHANGE_LANGUAGE", "user_main_keyboard");
-    } else {
-      ctx.send("ERROR_DB_FAIL");
-    }
-  } else {
-    ctx.send("TXT_CHANGE_LANGUAGE");
-  }
 });
 
 export default scene;

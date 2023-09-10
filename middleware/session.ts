@@ -4,15 +4,7 @@ import { ExtContext } from "../src/interface";
 
 export default async (ctx: ExtContext, next: CallableFunction) => {
   console.time(`Processing update ${ctx.update.update_id}`);
-  //If session missing for current chat create default session;
-  if (!ctx.session) {
-    console.log("Session is missing");
-    ctx.session = {
-      userID: 0,
-      chatID: 0,
-      name: "",
-    };
-  }
+  console.log("Session before actions", ctx.session);
 
   if (!ctx.session.chatID) {
     if (typeof ctx.message !== "undefined") {
@@ -35,6 +27,7 @@ export default async (ctx: ExtContext, next: CallableFunction) => {
   }
   //Go to next step
   await next();
+  console.log("Session after actions", ctx.session);
   // runs after next middleware finishes
   console.timeEnd(`Processing update ${ctx.update.update_id}`);
 };

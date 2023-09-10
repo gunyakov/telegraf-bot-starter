@@ -10,7 +10,9 @@ import stages from "./scenes/stage";
 // Create your bot and tell it about your context type
 const bot = new Telegraf<ExtContext>(BOT_TOKEN[MODE]);
 //Reg default telegraff session
-bot.use(session());
+bot.use(
+  session({ defaultSession: () => ({ userID: 0, chatID: 0, name: "" }) })
+);
 //Reg custom session to get users from DB
 bot.use(BotSession);
 //Extend Context with custom functions

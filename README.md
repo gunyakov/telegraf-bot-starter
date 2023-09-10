@@ -1,4 +1,4 @@
-#telegraf-bot-starter
+# telegraf-bot-starter
 
 This is an example of a telegraph bot with scenes, mysql and multilingual support. For any teaching or development purposes. If you use my code to develop your bot, my name must be in the credentials as co-author.
 
@@ -16,7 +16,12 @@ npm install
 npm run start
 ```
 
-### 09 Sep 2023 v2.0.0
+#### 10 Sep 2023 v2.1.0
+
+- Add Language selection scene
+- Refactoring of keyboards making algoritm.
+
+#### 09 Sep 2023 v2.0.0
 
 - The bot has been rewritten using TypeScript.
 - Support for version 4.13.1 of Telegraf.

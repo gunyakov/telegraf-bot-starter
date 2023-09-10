@@ -14,11 +14,11 @@ export var DB = {
   },
   USER: {
     prod: "bot",
-    dev: "bot",
+    dev: "",
   },
   DATABASE: {
     prod: "bot",
-    dev: "bot",
+    dev: "bot_test",
   },
   PASSWORD: {
     prod: "",

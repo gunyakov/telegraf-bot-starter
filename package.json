@@ -1,6 +1,6 @@
 {
   "name": "Bot starter",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Example of telegraf bot",
   "main": "index.js",
   "scripts": {

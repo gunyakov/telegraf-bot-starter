@@ -31,6 +31,7 @@ export interface ExtContext extends Context {
   ) => Promise<void>;
   getText: (key: string, insertions?: Array<string>, language?: Lang) => string;
   getID: () => number;
+  getParameter: () => string;
   editKeyboard: (keyboard: string, extra?: SendExtra) => Promise<void>;
   editMessage: (
     key: string,
@@ -62,7 +63,7 @@ export interface BasicOptions {
 
 export interface Keyboards {
   [id: string]: (
-    ctx: ExtContext,
+    lang: Lang,
     opts?: Array<string>
   ) => Markup.Markup<ReplyKeyboardMarkup | InlineKeyboardMarkup>;
 }
