@@ -11,8 +11,8 @@ const scene = new Scenes.BaseScene<ExtContext>("languageScene");
 scene.enter((ctx) => {
   ctx.send("TXT_SELECT_LANGUAGE", "account_language");
 });
+
 scene.action(["language:ru", "language:en"], async (ctx) => {
-  console.log(ctx.getParameter());
   switch (ctx.getParameter()) {
     case "ru":
       ctx.setLocale(Lang.ru);
@@ -30,18 +30,14 @@ scene.action(["language:ru", "language:en"], async (ctx) => {
         ctx.session.userID,
       ])
     ) {
-      ctx.send("TXT_CHANGE_LANGUAGE");
+      ctx.sendWC("TXT_CHANGE_LANGUAGE", "user_main_keyboard");
     } else {
       ctx.send("ERROR_DB_FAIL");
     }
   } else {
-    ctx.send("TXT_CHANGE_LANGUAGE");
+    ctx.sendWC("TXT_CHANGE_LANGUAGE", "user_reg_keyboard");
   }
   ctx.scene.leave();
-});
-
-scene.use((ctx, next) => {
-  ctx.send("TXT_PROHIBITED_ACTION");
 });
 
 export default scene;

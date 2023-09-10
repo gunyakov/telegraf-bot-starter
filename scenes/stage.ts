@@ -9,10 +9,7 @@ import registrationScene from "./registration";
 import languageScene from "./language";
 
 const stages = new Scenes.Stage<ExtContext>(
-  [accountScene, registrationScene, languageScene],
-  {
-    ttl: 10,
-  }
+  [accountScene, registrationScene, languageScene]
 );
 //Language changing available for all users
 stages.hears(Titles.hearsTrigger("BUTTON_LANGUAGE"), async (ctx) => {

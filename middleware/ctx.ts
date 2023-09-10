@@ -100,6 +100,16 @@ export default async function (ctx: ExtContext, next: CallableFunction) {
     });
   };
 
+  ctx.sendWC = async function (
+    key: string,
+    keyboard?: string,
+    insertions?: Array<string>,
+    extra?: SendExtra
+  ): Promise<void> {
+    await ctx.deleteMessage();
+    await ctx.send(key, keyboard, insertions, extra, true);
+  };
+
   ctx.editKeyboard = async function (
     keyboard: string,
     extra?: SendExtra

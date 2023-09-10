@@ -27,8 +27,8 @@ let keyboards: Keyboards = {
   account_language: (lang) =>
     Markup.inlineKeyboard(
       [
-        callbackButton("🇷🇺", "language_ru"),
-        callbackButton("🇺🇸", "language_en"),
+        callbackButton("🇷🇺", "language:ru"),
+        callbackButton("🇺🇸", "language:en"),
       ],
       { columns: 2 }
     ),
@@ -37,10 +37,10 @@ let keyboards: Keyboards = {
     const keyboard = Markup.inlineKeyboard([], { columns: 1 });
 
     keyboard.reply_markup.inline_keyboard.push([
-      callbackButton(Titles.getText("BUTTON_YES", lang), "btn_confirm"),
+      callbackButton(Titles.getText("BUTTON_YES", lang), "btn:confirm"),
     ]);
     keyboard.reply_markup.inline_keyboard.push([
-      callbackButton(Titles.getText("BUTTON_CANCEL", lang), "btn_cancel"),
+      callbackButton(Titles.getText("BUTTON_CANCEL", lang), "btn:cancel"),
     ]);
     return keyboard;
   },

@@ -11,7 +11,6 @@ const scene = new Scenes.WizardScene<ExtContext>(
   "registrationScene",
   //Use composer to apply filters for your steps
   Composer.on(message("text"), async (ctx) => {
-    console.log("Step 1");
     if (!ctx.message.text) {
       return ctx.send("TXT_REG_STEP_1");
     } else {
@@ -24,7 +23,6 @@ const scene = new Scenes.WizardScene<ExtContext>(
     }
   }),
   Composer.on(message("text"), async (ctx) => {
-    console.log("Step 2");
     if (!ctx.message.text) {
       return ctx.send("TXT_REG_STEP_2");
     } else {
@@ -32,15 +30,15 @@ const scene = new Scenes.WizardScene<ExtContext>(
         /[\u0800-\uFFFF]/g,
         ""
       );
-      // let result = await dbquery(Queries.REG_USER, [
-      //   ctx.session.chatID,
-      //   ctx.scene.session.nickname,
-      //   ctx.session.lang || Lang.en,
-      // ]);
-      if (true) {
-        ctx.send("TXT_REG_COMPLETED");
+      let result = await dbquery(Queries.REG_USER, [
+        ctx.session.chatID,
+        ctx.scene.session.nickname,
+        ctx.session.lang || Lang.en,
+      ]);
+      if (result) {
+        ctx.send("TXT_REG_COMPLETED", "user_main_keyboard");
       } else {
-        ctx.send("TXT_DB_ERROR");
+        ctx.send("TXT_DB_ERROR", "user_reg_keyboard");
       }
       return ctx.scene.leave();
     }
@@ -48,35 +46,22 @@ const scene = new Scenes.WizardScene<ExtContext>(
 );
 
 scene.enter((ctx) => {
-  console.log("Reg scene enter");
   ctx.send("TXT_REG_STEP_1", "cancel_keyboard");
-});
-
-scene.leave((ctx) => {
-  console.log("Reg scene leave");
 });
 
 scene.hears(Titles.hearsTrigger("BUTTON_CANCEL"), (ctx) => {
   ctx.send("TXT_REG_EXIT_ENSURE", "confirm_keyboard");
 });
 
-scene.action("btn_confirm", async (ctx) => {
-  await ctx.send("TXT_REG_CANCELED", "user_main_keyboard");
+scene.action("btn:confirm", async (ctx) => {
+  ctx.deleteMessage();
+  await ctx.send("TXT_REG_CANCELED", "user_reg_keyboard");
   ctx.scene.leave();
 });
 
-scene.action("btn_cancel", async (ctx) => {
+scene.action("btn:cancel", async (ctx) => {
   await ctx.deleteMessage();
   return ctx.send(`TXT_REG_STEP_${ctx.wizard.cursor + 1}`);
-});
-
-scene.use(async (ctx, next) => {
-  console.log("Inside scene Reg");
-  if (typeof ctx.callbackQuery !== "undefined") {
-    //console.log("Callback data", ctx.callbackQuery);
-  }
-  await next();
-  //await ctx.send("TXT_PROHIBITED_ACTION");
 });
 
 export default scene;

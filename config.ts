@@ -14,7 +14,7 @@ export var DB = {
   },
   USER: {
     prod: "bot",
-    dev: "",
+    dev: "bot",
   },
   DATABASE: {
     prod: "bot",

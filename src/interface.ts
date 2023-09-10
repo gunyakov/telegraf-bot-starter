@@ -17,6 +17,7 @@ interface ExtSession extends Scenes.WizardSession<ExtWizardSession> {
   userID: number;
   chatID: number;
   name: string;
+  tgName: string;
   lang?: Lang;
 }
 
@@ -28,6 +29,12 @@ export interface ExtContext extends Context {
     insertions?: Array<string>,
     extra?: SendExtra,
     cleanMessage?: boolean
+  ) => Promise<void>;
+  sendWC: (
+    key: string,
+    keybrd?: string,
+    insertions?: Array<string>,
+    extra?: SendExtra
   ) => Promise<void>;
   getText: (key: string, insertions?: Array<string>, language?: Lang) => string;
   getID: () => number;

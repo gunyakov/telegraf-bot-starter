@@ -40,8 +40,8 @@
     "en": "Ops... Bot was restarted. All temporary data was destroyed. You will be switch to main menu."
   },
   "TXT_ACCOUNT_INFO": {
-    "ru": "<b>Имя:</b> *\n<b>Мой TG ID:</b> *\n\n------------------\n\n<b>Напоминание.</b>\n Любая инфа здесь.",
-    "en": "<b>Name:</b> *\n<b>My TG ID:</b> *\n\n------------------\n\n<b>Memo.</b>\n Any other info here."
+    "ru": "<b>Телеграм Имя:</b> *\n<b>Мой TG ID:</b> *\n<b>Имя из базы:</b> *\n\n------------------\n\n<b>Напоминание.</b>\n Любая инфа здесь.",
+    "en": "<b>Tg Name:</b> *\n<b>My TG ID:</b> *\n<b>Name from DB:</b> *\n\n------------------\n\n<b>Memo.</b>\n Any other info here."
   },
   "TXT_SELECT_LANGUAGE": {
     "ru": "Выберите язык / Select language: ",
