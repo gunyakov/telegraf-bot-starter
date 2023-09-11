@@ -1,6 +1,6 @@
 {
   "name": "Bot starter",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Example of telegraf bot",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,8 @@
   "dependencies": {
     "colors": "^1.4.0",
     "mysql2": "^3.6.0",
-    "telegraf": "^4.13.1"
+    "telegraf": "^4.13.1",
+    "validate.js": "^0.13.1"
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.2",

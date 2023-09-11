@@ -27,6 +27,11 @@ npm run start
 
 ## Version Log
 
+#### Sep 12, 2023 v2.2.0
+
+- Reg scene validator
+- Improve getText for language handler to supply not only a key, but also array of keys.
+
 #### Sep 11, 2023 v2.1.1
 
 - Errors resolving

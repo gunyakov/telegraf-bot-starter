@@ -23,9 +23,17 @@
     "ru": "Введите желаемый ник в игре:",
     "en": "Enter the desired nickname in the game:"
   },
+  "TXT_REG_STEP_1_ERROR": {
+    "ru": "Ник должен содердать от 3х да 20ти символов и не содердать спец символов.",
+    "en": "Nick must be from 3 to 20 simbols length and not contain special chars."
+  },
   "TXT_REG_STEP_2": {
     "ru": "Введите емайл:",
     "en": "Enter email:"
+  },
+  "TXT_REG_STEP_2_ERROR": {
+    "ru": "Емейл должен быть в формате name@domain.com.",
+    "en": "Email must be in format name@domain.com."
   },
   "TXT_REG_EXIT_ENSURE": {
     "ru": "Вы действительно хотите отменить регистрацию?",

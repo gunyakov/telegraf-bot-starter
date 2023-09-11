@@ -3,7 +3,7 @@ import { Mode } from "./src/enums";
 export var MODE: Mode = Mode.dev;
 export var BOT_TOKEN: { [key in Mode]: string } = {
   prod: "",
-  dev: "",
+  dev: "1482739489:AAE00puqjQuZiwSK31b0DA2l07kVGkyLfEw",
 };
 export var SERVER_IP = "somedomain.com";
 export var WEBHOOK_PORT = 9777;
@@ -14,7 +14,7 @@ export var DB = {
   },
   USER: {
     prod: "bot",
-    dev: "bot",
+    dev: "goodzon",
   },
   DATABASE: {
     prod: "bot",
@@ -22,7 +22,7 @@ export var DB = {
   },
   PASSWORD: {
     prod: "",
-    dev: "",
+    dev: "26590710",
   },
 };
 export var LOG = {

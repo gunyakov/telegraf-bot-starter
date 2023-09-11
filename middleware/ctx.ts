@@ -13,7 +13,7 @@ const basic_options: BasicOptions = {
 };
 
 export default async function (ctx: ExtContext, next: CallableFunction) {
-  ctx.getText = function (key: string, insertions?: Array<string>): string {
+  ctx.getText = function (key, insertions): string {
     return Titles.getText(key, ctx.session.lang || Lang.en, insertions);
   };
 
@@ -40,11 +40,11 @@ export default async function (ctx: ExtContext, next: CallableFunction) {
   };
 
   ctx.send = async function (
-    key: string,
-    keyboard?: string,
-    insertions?: Array<string>,
-    extra?: SendExtra,
-    cleanMessage?: boolean
+    key,
+    keyboard,
+    insertions,
+    extra,
+    cleanMessage
   ): Promise<void> {
     let lang = extra?.language || ctx.session?.lang || Lang.en;
 

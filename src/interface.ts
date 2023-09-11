@@ -24,7 +24,7 @@ interface ExtSession extends Scenes.WizardSession<ExtWizardSession> {
 // Define your own context type
 export interface ExtContext extends Context {
   send: (
-    key: string,
+    key: string | Array<string>,
     keybrd?: string,
     insertions?: Array<string>,
     extra?: SendExtra,
@@ -36,7 +36,11 @@ export interface ExtContext extends Context {
     insertions?: Array<string>,
     extra?: SendExtra
   ) => Promise<void>;
-  getText: (key: string, insertions?: Array<string>, language?: Lang) => string;
+  getText: (
+    key: string | Array<string>,
+    insertions?: Array<string>,
+    language?: Lang
+  ) => string;
   getID: () => number;
   getParameter: () => string;
   editKeyboard: (keyboard: string, extra?: SendExtra) => Promise<void>;
