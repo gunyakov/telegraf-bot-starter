@@ -6,6 +6,8 @@ import { DB, MODE } from "../config";
 
 import { createPool, RowDataPacket } from "mysql2";
 
+type QueryKeys = typeof queries;
+
 const mysqlConfig = {
   host: DB.HOST[MODE],
   user: DB.USER[MODE],
@@ -20,7 +22,7 @@ const mysqlConfig = {
 const pool = createPool(mysqlConfig);
 
 export default async function (
-  query: queries,
+  key: keyof QueryKeys,
   params: Array<any>,
   onlyFirstRow = false,
   timeout = 3000
@@ -32,11 +34,11 @@ export default async function (
         let timeOutFunc = setTimeout(() => {
           conn.release();
           resolve(false);
-          Log.error("DB", `Query: ${query}, Timeout`);
+          Log.error("DB", `Query: ${queries[key]}, Timeout`);
         }, timeout);
         // Do something with the connection
         conn.query(
-          query,
+          queries[key],
           params,
           function (err2, rows: RowDataPacket[][], fields) {
             //Clear connection timeout wating
@@ -53,7 +55,7 @@ export default async function (
               }
             } else {
               Log.info("DB", err2.message);
-              Log.error("DB", `Query: ${query}, PARAMS: ${params}`);
+              Log.error("DB", `Query: ${queries[key]}, PARAMS: ${params}`);
               resolve(false);
             }
           }

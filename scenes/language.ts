@@ -3,7 +3,6 @@ import { ExtContext } from "../src/interface";
 import { Lang } from "../src/enums";
 
 import dbquery from "../DB/index";
-import Queries from "../DB/queries";
 
 //Init base scene
 const scene = new Scenes.BaseScene<ExtContext>("languageScene");
@@ -25,10 +24,7 @@ scene.action(["language:ru", "language:en"], async (ctx) => {
   if (ctx.session.userID) {
     //If request make properly to DB
     if (
-      await dbquery(Queries.UPDATE_USER_LANG, [
-        ctx.session.lang,
-        ctx.session.userID,
-      ])
+      await dbquery("UPDATE_USER_LANG", [ctx.session.lang, ctx.session.userID])
     ) {
       ctx.sendWC("TXT_CHANGE_LANGUAGE", "user_main_keyboard");
     } else {

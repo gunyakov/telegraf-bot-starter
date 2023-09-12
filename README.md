@@ -27,6 +27,10 @@ npm run start
 
 ## Version Log
 
+#### Sep 13, 2023 v2.2.1
+
+- dbquery code improvments
+
 #### Sep 12, 2023 v2.2.0
 
 - Reg scene validator

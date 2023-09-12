@@ -2,7 +2,6 @@ import { Scenes } from "telegraf";
 import { ExtContext } from "../src/interface";
 
 import dbquery from "../DB/index";
-import Queries from "../DB/queries";
 
 const scene = new Scenes.BaseScene<ExtContext>("accountScene");
 
@@ -23,7 +22,7 @@ scene.action("delete_me", async (ctx) => {
 });
 
 scene.action("btn:confirm", async (ctx) => {
-  let result = await dbquery(Queries.DELETE_USER, [ctx.session.chatID]);
+  let result = await dbquery("DELETE_USER", [ctx.session.chatID]);
   if (result) {
     //Reset user ID
     ctx.session.userID = 0;

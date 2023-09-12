@@ -1,5 +1,5 @@
 import { Lang } from "../src/enums";
-import { ExtContext, Keyboards } from "../src/interface";
+import { Keyboards } from "../src/interface";
 import inlineKeyboards from "./inlineKeyboards";
 import usualKeyboards from "./keyboards";
 

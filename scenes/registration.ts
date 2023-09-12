@@ -4,7 +4,6 @@ import { message } from "telegraf/filters";
 import Titles from "../lang/index";
 import { Lang } from "../src/enums";
 import dbquery from "../DB/index";
-import Queries from "../DB/queries";
 
 import validate from "validate.js";
 //Init wizard scene with name and define steps
@@ -57,7 +56,7 @@ const scene = new Scenes.WizardScene<ExtContext>(
       //Get email
       ctx.scene.session.email = ctx.message.text;
       //Insert user info in DB
-      let result = await dbquery(Queries.REG_USER, [
+      let result = await dbquery("REG_USER", [
         ctx.session.chatID,
         ctx.scene.session.nickname,
         ctx.session.lang || Lang.en,

@@ -1,5 +1,4 @@
 import dbquery from "../DB/index";
-import Queries from "../DB/queries";
 import { Lang } from "../src/enums";
 import { ExtContext } from "../src/interface";
 
@@ -18,7 +17,7 @@ export default async (ctx: ExtContext, next: CallableFunction) => {
     }
   }
   let userInfo = (await dbquery(
-    Queries.GET_ONE_USER,
+    "GET_ONE_USER",
     [ctx.session.chatID],
     true
   )) as { ID: number; lang: Lang; name: string };
