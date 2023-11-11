@@ -22,7 +22,7 @@ export var DB = {
   },
   PASSWORD: {
     prod: "",
-    dev: "26590710",
+    dev: "",
   },
 };
 export var LOG = {
